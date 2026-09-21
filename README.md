@@ -12,13 +12,18 @@ fleet is built.
 Operating motto: *always learning, always teaching* — understand the why, then
 apply it to the next thing.
 
-## Skills live here
+## Start here
 
-The two methodology skills are the method written as executable instructions
-for an agent, and this repo is their **canonical home**. Edit them here and
-nowhere else. Other repos and machines consume them from here — by symlink or
-checkout — rather than keeping copies, because a copy is a second source of
-truth and drifts.
+**[The Co-Architect Method](docs/the-co-architect-method.md)** — how one person
+with no CS degree runs production infrastructure built by AI agents, and why the
+discipline, not the model, is what makes it hold.
+
+## The skills
+
+`skills/` holds the method written as executable instructions for an agent.
+It is a **published mirror** of the canonical, private skills repository; every
+file is pinned to its source blob in [`skills/SOURCE.md`](skills/SOURCE.md) so
+drift is detectable. Don't edit them here.
 
 ## What belongs here
 Cross-cutting docs about *how* ClearForge builds and reasons. **Not** product code,
@@ -27,6 +32,7 @@ about methodology, architecture philosophy, research direction, or the builder's
 mindset, it belongs here.
 
 ## Contents
+- `docs/the-co-architect-method.md` — the method, and why each part exists.
 - `skills/co-architect-work-order/` — the architect-to-builder discipline: work
   orders, kickoffs, adversarial pass, upward feedback, PR review.
 - `skills/repo-genesis/` — a repository's documentary backbone: README, northstar,
