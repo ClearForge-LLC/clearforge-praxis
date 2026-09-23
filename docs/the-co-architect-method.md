@@ -151,7 +151,7 @@ The method is meant to be judged by its output, so here is the public part of it
 
 - **[ClearSeal](https://github.com/ClearForge-LLC/ClearSeal-public)** — an integrity and authenticity standard for MCP servers and other LLM-access nodes. It was hardened by building against it: most of what is in its last three versions was found by a builder agent implementing the standard and fed back upstream — including one mechanism invented at the reference implementation that reached the standard a week late, which is now a rule in the standard itself.
 - **[The two methodology skills](../skills/)** — this method written as executable instructions for an agent. They are versioned and reviewed like code, because they are the thing that makes the method repeatable rather than something I have to remember.
-- **[ClearProof](https://github.com/ClearForge-LLC/ClearProof)** — the failure record. Fifteen incidents, each reduced to one rule. The failure that keeps recurring in the private record is one bug in different clothes: *a check that reported success while measuring the wrong thing.*
+- **[ClearProof](https://github.com/ClearForge-LLC/ClearProof)** — the failure record. Real incidents, each reduced to one rule, added as the work turns up new ones. The failure that keeps recurring in the private record is one bug in different clothes: *a check that reported success while measuring the wrong thing.*
 
 ---
 
