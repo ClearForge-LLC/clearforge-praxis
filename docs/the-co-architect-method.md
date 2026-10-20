@@ -145,6 +145,20 @@ A coding agent's working memory is finite, and how it is spent matters as much a
 
 ---
 
+## 8. Size the proof and the scope to the change
+
+Discipline has a cost curve, and left alone it bends the wrong way. Two rules keep it honest.
+
+**Mutation testing is sized to the diff.** Mutation testing checks the tests themselves: break the code on purpose, one guard at a time, and confirm some test goes red. A guard whose removal no test notices is protecting nothing, and this is the only check that finds that. So every work order mutates **the guards it adds or changes**, one mutant each, against the suites those guards live in. The full sweep, every mutation of every guard, runs once, **at a phase gate**. Any heavy run goes in its own memory-capped process group, so a runaway test kills the tests and not the agent running them.
+
+**Why:** one small follow-up order added about a hundred lines of guards. Because those lines touched every apply script, the "re-run every mutation that touches a changed file" habit turned it into 1,107 mutations across 22 runners, hours of runtime, and finally an out-of-memory kill that took the builder down mid-run. Nearly all of it re-proved code that had not changed and had already passed. Taste the dish you changed, every time; re-taste the whole menu at the seasonal review.
+
+**A work order has to pass a scope test.** It earns its place if it **protects the system or its data**, or **advances the thing the system is for**. A second or third round on a safeguard that already works goes to a backlog, unless a hard invariant is actually failing. Foundation is never cut. Polish waits in line.
+
+**Why:** scope creep in an agent-built system rarely looks like creep. Each next round on a safeguard is individually defensible: one more check, one more redundancy, one more follow-up order. The sum quietly becomes a second project. In one build, about half the work orders over a week were further rounds on mechanisms that already worked, while the actual goal waited. The test turns "is this defensible?", which is almost always yes, into "is this the work?"
+
+---
+
 ## What this method has produced
 
 The method is meant to be judged by its output, so here is the public part of it:
